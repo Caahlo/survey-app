@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="abc">
+
+  <head>
+    <meta charset="utf-8">
+    <title>BRK</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link href="favicon.ico" rel="icon" type="image/x-icon">
+    <script src="umfrage.js" type="module"></script>
+  </head>
+  <body>
+
+    <!-- static content -->
+    <div id="entry-view">
+      <header>
+        <h1>Umfrage zur Sexualität in Institutionen</h1>
+        <h2>Basierend auf der UNO Behindertenrechtskonvention (BRK)</h2>
+      </header>
+      <main>
+        <section>
+          <p id="pSubstituteProfile" class="form-annotation-inverted"Wählen Sie hier, wer Sie sind.</p>
+          <form id="profile-select-form">
+            <label for="profil" tabindex="0">Ich bin
+              <select id="profile-select" name="profil" tabindex="0"  required>
+                <option value="Bewohnende">Bewohner:in</option>
+                <option value="Fachkraefte">Fachmitarbeiter:in</option>
+                <option value="Angehoerige">Angehörige:r</option>
+              </select>
+            </label>
+            <div class="blob-button">
+              <input id="profile-select-form-button" class="profile-select-form-button" tabindex="0" type="submit" value="Klicken Sie hier, um die Umfrage zu starten ✔️">
+            </div>
+          </form>
+          <section class="entry-information">
+            <p>Nachdem die Umfrage gestartet wurde, haben Sie eine Liste mit verschiedenen Fragen vor sich. Bitte kreuzen Sie die Antwort an, die für sie passt.</p>
+              <ul>
+                <li>Es gibt keine richtigen und falschen Antworten. Nur Ihre Meinung zählt.</li>
+                <li>Beantworten Sie die Checkliste wenn möglich allein.</li>
+                <li>Wenn Sie eine Frage nicht verstehen, wählen Sie "kann ich nicht beurteilen".</li>
+                <li>Sie müssen Ihren Namen nicht aufschreiben.</li>
+                <li id="substitute-bewohnende-anonym"><strong>Die Antworten bleiben geheim.</strong></li>
+              </ul>
+              <p>Nehmen Sie sich Zeit, die Fragen zu beantworten.</p>
+              <p>Vielen Dank fürs Mitmachen.</p>
+            </p>
+          </section> 
+        </section>
+      </main>
+    </div>
+
+    <div id="super-view">
+      <div id="main-view" hidden>
+        <header>
+          <h1>Sexuelle Gewalt</h1>
+          <h2>Fragen aus der Kategorie sexuelle Gewalt</h2>
+        </header>
+
+        <section>
+          <!-- <p>Die Fragen werden geladen. Bitte warten Sie einen Augenblick...</p> -->
+        </section>
+
+        <!-- dynamic content -->
+        <!-- the following content requires JS post building -->
+        <section id="41">
+          <section id="sexuellegewalt41" class="lightbox">
+            <figure>
+              <a href="#" tabindex="0" class="close">g</a>
+              <a tabindex="-1" href="#">
+                <figcaption>
+                  <def>sexuelle Gewalt</def>
+                  <p tabindex="0">Jemand belästigt Sie sexuell. Zum Beispiel: jemand berührt Sie an einer intimen Stelle. Beispielsweise am Busen oder Po. Das wollen Sie aber nicht. Oder jemand zwingt Sie zum Sex. Das ist verboten.</p>
+                </figcaption>
+              </a>
+            </figure>
+          </section>
+
+          <main>
+            <section class="questions">
+              <p tabindex="0" id="question">Hat Ihnen das Wohnheim erklärt, was sexuelle Gewalt ist?</p>
+            </section>
+            <section class="definition">
+              <a href="#sexuellegewalt41">
+                <section>
+                  <p>was bedeutet <strong><def>sexuelle Gewalt</def></strong>?</p>
+                </section>
+              </a>
+            </section>
+            <section class="answers">
+              <form name="answer-id">
+                <p class="form-annotation-inverted">
+                  Bitte wählen Sie eine Antwort aus.
+                </p>
+                <fieldset class="answer-form">
+                  <div>
+                    <input tabindex="0" type="radio" id="41-yes" name="answer" value="ja"/>
+                    <label for="41-yes">Ja 😀</label>
+                  </div>
+                  <div>
+                    <input tabindex="0" type="radio" id="41-sometimes" name="answer" value="teilweise" />
+                    <label for="41-sometimes">Teilweise 😐</label>
+                  </div>
+                  <div>
+                    <input tabindex="0" type="radio" id="41-no" name="answer" value="nein" />
+                    <label for="41-no">Nein 😟</label>
+                  </div>
+                  <div>
+                    <input tabindex="0" type="radio" id="41-noanswer" name="answer" value="Kann ich nicht beantworten ✖" />
+                    <label for="41-noanswer">Kann ich nicht beantworten ✖</label>
+                  </div>
+                </fieldset>
+              </form>
+            </section>
+          </main>
+          <nav>
+            <ol>
+              <li class="navigate-questions">
+                <button name="button" id="123" class="intermediate-view-button">◀️ zur letzten Frage zurück</button>
+              </li>
+              <li class="navigate-questions">
+                <div class="blob-button">
+                  <button name="button" id="tempForwardButton" class="intermediate-view-button">▶️ zur nächsten Frage weiter</button>
+                </div>
+              </li>
+            </ol>
+          </nav>
+          
+        </section>
+      </div>
+
+      <div id="intermediate-view" hidden>
+        <header>
+          <h1>Sexuelle Gewalt</h1>
+          <h2 tabindex="0">Kommentarmöglichkeit</h2>
+        </header>
+        <section class="ask-and-comment">
+          <section class="ask-category">
+            <p tabindex="0">
+              Gibt es noch allgemeine Bemerkungen oder Ergänzungen zu einzelnen Fragen bezüglich  
+              dem Thema «sexuelle Gewalt»?
+            </p>
+          </section>
+          <main>
+            <section>
+              <form action="" method="post" class="comment-category">
+                <label for="comment-category-form">Kategorie kommentieren:</label>
+                <input type="text" name="comment-category-form" id="comment-category-form4">
+                <p class="form-annotation">Kommentare zum Thema sexuelle Gewalt können Sier hier hinschreiben.</p>
+              </form>
+            </section>
+          </main>
+        </section>
+        <nav>
+          <ol>
+            <li class="navigate-questions">
+              <button name="button" id="456" class="intermediate-next-view-button">◀️ zur letzten Frage zurück</button>
+            </li>
+            <li class="navigate-questions">
+              <div class="blob-button">
+                <button name="button" class="intermediate-view-button">Umfrage beenden ✔️</button>
+              </div>
+            </li>
+          </ol>
+        </nav>
+        <p class="form-annotation">Nachdem Sie die Umfrage beendet haben, erhalten Sie Empfehlungen basierend auf Ihren Antworten.</p>
+      </div>
+
+      <!-- static content -->
+      <div id="end-view" hidden>
+        <header>
+            <h1>Danke fürs Mitmachen.</h1>
+            <h2></h2>
+        </header>
+        <main>
+          <p tabindex="0">Vielen Dank für Ihre Teilnahme an der Umfrage zum Thema Sexualität und BRK in Institutionen.</p>
+        </main>
+      </div>
+    </div>
+
+    <div id="exception-view" hidden>
+      <header>
+        <h1 tabindex="0">Ein Fehler ist aufgetreten</h1>
+      </header>
+      <main>
+        <section>
+          <p id="exception-view-text"></p>
+        </section>
+      </main>
+    </div>
+
+  </body>
+</html>

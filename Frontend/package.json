@@ -1,0 +1,61 @@
+{
+  "name": "Frontend Knackpunkt BRK",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./esm/index.js",
+      "require": "./commonjs/index.cjs"
+    }
+  },
+  "keywords": [
+    "computer-science",
+    "cs",
+    "accessibility",
+    "usability",
+    "javascript"
+  ],
+  "author": "Claudio Knaus",
+  "license": "not specified",
+  "main": "./commonjs/index.cjs",
+  "types": "./types/index.d.ts",
+  "scripts": {
+    "start": "npx tsc && docker-compose up --force-recreate --build",
+    "lint": "eslint --config .eslintrc.json . --ext .ts --fix",
+    "test": "npx ts-mocha -p tsconfig.json 'src/**/*.ts'",
+    "clean": "npx rimraf ./dist && mkdir dist",
+    "copy": "copyfiles -u 1 src/**/* dist",
+    "dev": "npm run clean && npm run copy && tsc",
+    "distribute": "npm run dev && cd.. && docker-compose up --force-recreate --build backend db rp"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "@types/chai": "^4.3.3",
+    "@types/expect": "^24.3.0",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^18.7.23",
+    "@types/systemjs": "^6.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "chai": "^4.3.6",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "mocha": "^9.2.2",
+    "systemjs": "^6.13.0",
+    "ts-mocha": "^10.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "engines": {
+    "node": ">=14.16.0",
+    "npm": ">=6.14.0"
+  },
+  "dependencies": {
+    "copyfiles": "^2.4.1",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "node": "^18.9.1"
+  }
+}

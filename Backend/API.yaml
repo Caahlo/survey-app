@@ -1,0 +1,671 @@
+openapi: 3.0.3
+info:
+  title: Knackpunkt BRK
+  version: '1.0'
+servers:
+  - url: http://localhost:8000
+    description: Development Server
+  - url: https://srbsci-129.ost.ch
+    description: Production Server
+paths:
+  /api/umfrage/{institutionName}/{surveyIdentifier}:
+    get:
+      description: Get all questions for a certain Target Group (Specified in Query-Param). Intended for the displaying of questions to the survey participants.
+      tags:
+        - Survey
+      summary: Fetch Survey questions for the respondents
+      responses:
+        '200':
+          description: An array of Questions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  questions:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/question'
+        '400':
+          description: Failure
+          content:
+            application/json: {}
+    post:
+      description: Post answers to the questions fetched in the previous Get request. Intended for the submitting of questions that have been answered by the survey participants.
+      tags:
+        - Survey
+      summary: Submit results from respondents
+      requestBody:
+        description: Submit an Object containing an Array of answers
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                answers:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/answer'
+                comments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/comment'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json: {}
+        '400':
+          description: Failure
+          content:
+            application/json: {}
+    parameters:
+      - name: institutionName
+        in: path
+        required: true
+        schema:
+          type: string
+          format: string
+      - name: surveyIdentifier
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: targetGroup
+        in: query
+        required: true
+        schema:
+          type: string
+          format: string
+        description: Either 'Bewohnende', 'Fachkraefte' or 'Angehoerige'
+  /api/resultate/umfrage/{surveyId}:
+    get:
+      description: Get results of a survey (specified in path-param). Intended to serve as data to be displayed by the traffic light.
+      tags:
+        - Results
+      summary: Fetch Survey Results
+      responses:
+        '200':
+          description: An array of results
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/result'
+        '400':
+          description: Failure
+          content:
+            application/json: {}
+      security:
+        - jwtToken: []
+    parameters:
+      - name: surveyId
+        in: path
+        required: true
+        schema:
+          type: integer
+  /api/institutionen:
+    put:
+      description: Register to get an Account. Email can't belong to an existing institution.
+      tags:
+        - Institution Creation
+      summary: Register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                institution:
+                  $ref: '#/components/schemas/institution_put'
+      responses:
+        '200':
+          description: Sucessfully Saved Institution
+          content:
+            application/json: {}
+        '400':
+          description: Failure
+          content:
+            application/json: {}
+    patch:
+      description: Update an institution. Intended for password/email/address changes etc. No field may be empty.
+      tags:
+        - Institution Administration
+      summary: Update Institution Information (excl. PW and Email)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                institution:
+                  $ref: '#/components/schemas/institution_patch'
+      responses:
+        '200':
+          description: Update Institution Information
+          content:
+            application/json: {}
+        '400':
+          description: Failure
+          content:
+            application/json: {}
+      security:
+        - jwtToken: []
+  /api/institutionen/emailBestaetigen:
+    post:
+      description: Creates institution while also making sure that the email belongs to the person registering.
+      tags:
+        - Institution Creation
+      summary: Confirm and finalize Institution Creation.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  format: password
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json: {}
+    parameters:
+      - name: token
+        in: query
+        required: true
+        schema:
+          type: string
+  /api/institutionen/passwort:
+    patch:
+      description: Change password
+      tags:
+        - Institution Administration
+      summary: Update Institution Password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                institution:
+                  $ref: '#/components/schemas/institution_update_password'
+      responses:
+        '200':
+          description: Update Institution Information
+          content:
+            application/json: {}
+        '400':
+          description: Failure
+          content:
+            application/json: {}
+      security:
+        - jwtToken: []
+
+  /api/institutionen/email:
+    patch:
+      description: Change email
+      tags:
+        - Institution Administration
+      summary: Update Institution Email
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                institution:
+                  $ref: '#/components/schemas/institution_update_email'
+      responses:
+        '200':
+          description: Update Institution Information
+          content:
+            application/json: {}
+        '400':
+          description: Failure
+          content:
+            application/json: {}
+      security:
+        - jwtToken: []
+
+  /api/institutionen/{institutionId}:
+    get:
+      description: Get Institution Information. Intended for fetching current information for the Change-Personal-Information-Screen. (Display current information as default in inputs)
+      tags:
+        - Institution Information
+      summary: Get Institution Info
+      responses:
+        '200':
+          description: Object containing Institution Data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  institution:
+                    $ref: '#/components/schemas/institution_get'
+        '400':
+          description: Failure
+          content:
+            application/json: {}
+        '404':
+          description: Failure
+          content:
+            application/json: {}
+      security:
+        - jwtToken: []
+    delete:
+      description: Request permanent deletion of an institution. Makes the server send an email containing the deletion link to confirm the deletion.
+      tags:
+        - Institution Deletion
+      summary: Request Institution Deletion
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Failure
+        '401':
+          description: Unauthorised
+        '403':
+          description: No Permission
+      security:
+        - jwtToken: []
+    parameters:
+      - name: institutionId
+        in: path
+        required: true
+        schema:
+          type: integer
+  /api/institutionen/loeschen:
+    post:
+      description: Confirm deletion of Institution. Requires token provided in link received in an email. That email is sent after requesting a deletion
+      tags:
+        - Institution Deletion
+      summary: Confirm Institution Deletion
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Failure
+    parameters:
+      - name: token
+        in: query
+        required: true
+        schema:
+          type: string
+
+  /api/institutionen/{institutionId}/umfragen/:
+    get:
+      description: Get id, startDate and endDate of all surveys created by a certain institution in the past. Intended to enable institutions to view their previous results. (ID is used in get request for results)
+      tags:
+        - Institution Information
+      summary: Get all running and past Surveys of an Instituion
+      responses:
+        '200':
+          description: Array of Surveys
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  surveys:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        surveyId:
+                          type: integer
+                        startDate:
+                          type: string
+                          format: date-time
+                        endDate:
+                          type: string
+                          format: date-time
+      security:
+        - jwtToken: []
+    parameters:
+      - name: institutionId
+        in: path
+        required: true
+        schema:
+          type: integer
+  /api/institutionen/{institutionId}/umfragen/{surveyId}:
+    delete:
+      description: Delete a survey.
+      tags:
+        - Institution Administration
+      summary: Delete Survey
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json: {}
+      security:
+        - jwtToken: []
+    parameters:
+      - name: institutionId
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: surveyId
+        in: path
+        required: true
+        schema:
+          type: integer
+  /api/institutionen/{institutionId}/umfragen/start:
+    post:
+      description: Start a survey. Intended to enable institutions to start a new survey. If a survey is still running (an endDate has not been reached yet), this request fails (returns 400).
+      tags:
+        - Institution Administration
+      summary: Start new Survey
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json: {}
+        '400':
+          description: Failure
+          content:
+            application/json: {}
+      security:
+        - jwtToken: []
+    parameters:
+      - name: institutionId
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: duration
+        description: Duration of Survey in Days. Defaults to 30 (days)
+        in: query
+        required: false
+        schema:
+          type: integer
+  /api/refresh:
+    get:
+      description: get new accessToken
+      tags:
+        - Authorisation
+      summary: Get new Access Token
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accessToken:
+                    type: string
+                    format: byte
+        '307':
+          description: Failure (redirect to login in, not yet implemented)
+          content:
+            application/json: {}
+  /api/login:
+    post:
+      description: get accessToken to access institution routes
+      tags:
+        - Authorisation
+      summary: Log in. (Get Access Token and Refresh Token)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  format: password
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accessToken:
+                    type: string
+                    format: byte
+        '400':
+          description: Failure
+          content:
+            application/json: {}
+  /api/passwort/vergessen:
+    post:
+      description: Send email with reset-link to specified email, if email is in database
+      tags:
+        - Password Reset
+      summary: Request Password Reset Link
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+      responses:
+        '200':
+          description: This response is sent no matter what
+  /api/passwort/reset:
+    post:
+      description: Reset password. Requires valid guid received in Email after calling /api/passwort/vergessen
+      tags:
+        - Password Reset
+      summary: Reset Password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  format: password
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Failure
+    parameters:
+      - name: token
+        description: token received in email. Embedded in the link.
+        in: query
+        required: true
+        schema:
+          type: string
+components:
+  schemas:
+    question:
+      type: object
+      properties:
+        questionId:
+          type: integer
+        text:
+          type: string
+          format: string
+        category:
+          type: string
+          format: string
+        targetGroup:
+          type: string
+          format: string
+        answerOptions:
+          type: array
+          items:
+            $ref: '#/components/schemas/scoredAnswerOption'
+        hasSmileys:
+          type: boolean
+        questionType:
+          type: string
+          format: string
+        definitions:
+          type: array
+          items:
+            $ref: '#/components/schemas/definition'
+        recommendations:
+          type: array
+          items:
+            type: string
+    scoredAnswerOption:
+      type: object
+      properties:
+        option:
+          type: string
+          format: string
+          description: Either 'Ja', 'Nein', 'Manchmal' or 'NichtBeurteilbar'
+        score:
+          type: integer
+        questionId:
+          type: integer
+    definition:
+      type: object
+      properties:
+        title:
+          type: string
+          format: string
+        text:
+          type: string
+          format: string
+    answer:
+      type: object
+      properties:
+        question:
+          type: object
+          properties:
+            questionId:
+              type: integer
+        answer:
+          type: string
+          format: string
+    comment:
+      type: object
+      properties:
+        category:
+          type: string
+          format: string
+        text:
+          type: string
+          format: string
+    singleResult:
+      type: object
+      properties:
+        scores:
+          type: object
+          properties:
+            achievedResult:
+              type: integer
+            possibleResult:
+              type: integer
+        comments:
+          type: array
+          items:
+            type: string
+        recommendations:
+          type: array
+          items:
+            type: string
+    result:
+      type: object
+      properties:
+        category:
+          type: string
+          format: string
+        Fachkraefte:
+          $ref: '#/components/schemas/singleResult'
+        Bewohnende:
+          $ref: '#/components/schemas/singleResult'
+        Angehoerige:
+          $ref: '#/components/schemas/singleResult'
+    institution_put:
+      type: object
+      properties:
+        name:
+          type: string
+          format: string
+        address:
+          type: string
+          format: string
+        city:
+          type: string
+          format: string
+        areaCode:
+          type: string
+          format: string
+        email:
+          type: string
+          format: email
+    institution_patch:
+      type: object
+      properties:
+        institutionId:
+          type: integer
+        name:
+          type: string
+          format: string
+        address:
+          type: string
+          format: string
+        city:
+          type: string
+          format: string
+        areaCode:
+          type: string
+          format: string
+    institution_update_email:
+      type: object
+      properties:
+        institutionId:
+          type: integer
+        newEmail:
+          type: string
+          format: email
+    institution_update_password:
+      type: object
+      properties:
+        institutionId:
+          type: integer
+        oldPassword:
+          type: string
+          format: password
+        newPassword:
+          type: string
+          format: password
+    institution_get:
+      type: object
+      properties:
+        institutionId:
+          description: Optional
+          type: integer
+        name:
+          type: string
+          format: string
+        address:
+          type: string
+          format: string
+        city:
+          type: string
+          format: string
+        areaCode:
+          type: string
+          format: string
+        email:
+          type: string
+          format: email
+  securitySchemes:
+    jwtToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

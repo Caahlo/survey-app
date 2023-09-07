@@ -1,0 +1,583 @@
+a:link, a:visited { 
+  color:rgb(152, 0, 152);
+  text-decoration: none;
+}
+
+a:hover {
+  color:rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+a:active {
+  color:rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+html {
+  background-color: rgb(255, 189, 250);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+  display: block;
+  width: auto;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-end: 0em;
+  margin-inline-start: 0em;
+  margin-top: 0.1em;
+  border-radius: 0.3em;
+  color: rgb(255, 255, 255);
+  font-size: 0.5em;
+  background: url(../images/handsColor.svg) 95% 0 no-repeat;
+  background-size: 12%;
+  background-color: rgb(0, 0, 0);
+}
+
+header h1 {
+  font-size: 3em;
+  background-color: black;
+  width: fit-content;
+}
+
+header h2 {
+  font-size: 2em;
+  background-color: black;
+  width: fit-content;
+}
+
+#intermediate-view header ~ section {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+nav {
+  display: block;
+  margin: 0.5em;
+  border-radius: 0.5em;
+}
+
+nav ol li {
+  display: inline-block;
+}
+
+body {
+  font-size: 2em;
+  padding-bottom: 2em;
+  background-color: white;
+}
+
+main {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+select[name="profil"],
+select[name="result"],
+input[type="submit"],
+button {
+  font-size: 130%;
+}
+
+#profile-select-form,
+#result-select-form {
+  margin-top: 0.5em;
+  padding: 0.5em;
+  border:0.01em solid rgb(204, 204, 204);
+  border-radius: 0.1em;
+}
+
+.ask-and-comment {
+  margin-top: 0em;
+}
+
+#profile-select-form label {
+  font-size: 1.5em;
+}
+
+.questions {
+  font-size: 2em;
+  padding: 0.5em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-top: 0.25em;
+}
+
+.questions h3 {
+  font-size: 0.5em;
+}
+
+.definition {
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  padding-top: 0.01rem;
+  border-radius: 0.1em;
+  font-size: 1em;
+  text-align: center;
+}
+
+.definition a section p {
+  margin-bottom: 0em;
+  padding-bottom: 0.5em;
+  border: 0.01em solid black;
+  border-radius: 0.1em;
+  background-color: rgb(235, 235, 235);
+}
+
+.definition a:hover section p,
+.definition a:focus section p,
+.definition a:active section p {
+  background-color: black;
+  color: white;
+}
+
+.definition > a > section > p::before,
+.lightbox figure a figcaption def::before {
+  background-image: url(../images/leichteSpracheLogo.svg);
+  background-size: 2em 2em;
+  display: inline-block;
+  width: 2em; 
+  height: 2em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  margin-top: 0.5em;
+  content: "";
+}
+
+.lightbox figure a figcaption def::before {
+  margin-left: 0em;
+  margin-right: 0.5em;
+}
+
+.lightbox figure a figcaption def {
+  font-weight: bolder;
+}
+
+/* Unopened lightbox */
+.lightbox {
+  display: none;
+}
+
+/* Opened lightbox */
+.lightbox:target ~ main {
+  display: none;
+}
+
+.lightbox:target {
+  color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 85%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  z-index: 10;
+}
+
+.lightbox:target a {
+  color: white;
+  font-size: 1.5em;
+}
+
+/* Lightbox content */
+.lightbox figcaption {
+  width: 100%;
+  position: relative;
+  padding: 1.5em;
+  background-color: rgb(0, 0, 0);
+}
+
+/* Close button */
+.lightbox .close {
+  position: relative;
+  display: block;
+  margin-top: 10rem;
+}
+
+.lightbox .close::after {
+  right: -1.2em;
+  top: 0.2em;
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  display: flex;
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  color: black;
+  content: "×";
+  cursor: pointer;
+  font-size: 2em
+}
+
+.close ~ a > :hover {
+  color: white;
+}
+
+/* Lightbox overlay */
+.lightbox .close::before {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  content: "";
+  cursor: default;
+}
+
+
+.questions {
+  border:0.01em solid rgb(204, 204, 204);
+  border-radius: 0.3em;
+}
+
+fieldset.answer-form {
+  border: none;
+}
+
+
+fieldset.answer-form {
+  border:0.01em solid rgb(204, 204, 204);
+  border-radius: 0.3em;
+  padding-top: 1em;
+}
+
+fieldset.answer-form div {
+  height: 4.5em;
+  width: 100%;
+  position: relative;
+}
+
+fieldset.answer-form input {
+  display: block;
+  position: absolute;
+  width: inherit;
+  height: 81%;
+}
+
+fieldset.answer-form label {
+  display: inline-block;
+  position: relative;
+  width: 98%;
+  border-radius: 0.1em;
+  border: 0.01em solid black;
+  font-size: 2em;
+  text-align: left;
+  background-color:rgb(239, 239, 239);
+  margin-bottom: 0.25em;
+  margin-top: 0em;
+  padding: 0.25em;
+}
+
+fieldset.answer-form label.noSmileys {
+  padding-bottom: 0.35em;
+}
+
+.answer-form > label > input,
+.answer-form > label > p {
+  display: inline;
+}
+
+input[type="radio"],
+button[name="button"],
+input[type="submit"] {
+  margin-top: 0.5em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+}
+
+fieldset.answer-form input {
+  margin: 0.1em;
+}
+
+fieldset {
+  border-color:rgb(196, 196, 196);
+}
+
+:focus {
+  border: 0.3em solid rgb(0, 0, 0);
+  border-radius: 0.5em;
+}
+
+fieldset.answer-form input {
+  background-color: black;
+  color: white;
+}
+
+fieldset.answer-form input:checked {
+  outline: 1em solid rgb(0, 0, 0);
+}
+
+fieldset.answer-form input:checked label {
+  display: none;
+}
+
+fieldset.answer-form div[data-value="Ja"] label  {
+  background-color: rgb(227, 255, 227);
+  color: black;
+}
+
+fieldset.answer-form div[data-value="Ja"] label:hover,
+fieldset.answer-form div[data-value="Ja"] input:checked + label {
+  background-color: green;
+  color: white;
+}
+
+fieldset.answer-form div[data-value="Nein"] label  {
+  background-color: rgb(255, 228, 228);
+}
+
+fieldset.answer-form div[data-value="Nein"] label:hover,
+fieldset.answer-form div[data-value="Nein"] input:checked + label   {
+  background-color: red;
+  color: white;
+}
+
+fieldset.answer-form div[data-value="Manchmal"] label   {
+  background-color: rgb(255, 255, 223);
+}
+
+fieldset.answer-form div[data-value="Manchmal"] label:hover,
+fieldset.answer-form div[data-value="Manchmal"] input:checked + label  {
+  background-color: yellow;
+  color: black;
+}
+
+fieldset.answer-form div[data-value="NichtBeurteilbar"] label  {
+  background-color: rgb(236, 236, 236);
+  color: black;
+}
+
+fieldset.answer-form div[data-value="NichtBeurteilbar"] label:hover,
+fieldset.answer-form div[data-value="NichtBeurteilbar"] input:checked + label  {
+  background-color: black;
+  color: rgb(255, 255, 255);
+}
+
+.comment-category textarea {
+  width: 95%;
+  height: 3em;
+  font-size: 2em;
+}
+
+form label {
+  width: 100%;
+  display: block;
+  margin-top: 0.5em;
+}
+
+td, th {
+  border: 1px solid black;
+  padding: 10px;   
+}
+
+td {   
+  text-align: center;   
+}
+
+tr:nth-child(even) {
+  background-color: rgb(239, 239, 239);  
+}
+
+th[scope="col"] {
+  background-color: black;
+  color: white;   
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  table-layout: auto;
+  width: 100%;    
+}
+
+.form-annotation,
+.form-annotation-inverted {
+  font-size: inherit;
+  width: 95%;
+  background: rgb(0, 0, 0);
+  border-radius: 0.2em;
+  padding: 0.5em;
+  margin-top: 0.5em;
+  text-align: left;
+  color: rgb(255, 255, 255);
+}
+
+.form-annotation:before,
+.form-annotation-inverted:before {
+  content: "";
+  padding-top: 0.5em;
+}
+
+.form-annotation:before {
+  border-left: 0.6em solid rgb(0, 0, 0);
+  border-right: 0.3em solid transparent;
+  border-top: 0.6em solid transparent;
+  border-bottom: 0.3em solid rgb(0, 0, 0);
+}
+
+.form-annotation-inverted:before {
+  border-left: 0.3em solid transparent;
+  border-right: 0.6em solid rgb(0, 0, 0);
+  border-top: -0.3em solid rgb(0, 0, 0);
+  border-bottom: 1.2em solid transparent;
+}
+
+.blob-button {
+  display: inline;
+	background: black;
+	border-radius: 0.1em;
+	margin-left: 0em;
+	height: 10em;
+	width: 10em;
+
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+	transform: scale(50);
+	animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.99);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.99);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}
+
+/* gauge */
+
+.result-information {
+  margin-top: 0.5em;
+  padding: 0.5em;
+  border: 0.01em solid rgb(204, 204, 204);
+  border-radius: 0.1em;
+  font-size: 0.05em;
+  display: flex;
+}
+
+.result-information-text p,
+p.result-information-table-text {
+  font-size: 2rem;
+  display: block;
+}
+
+/* // Gauge */
+.mask {
+  position: relative;
+  overflow: hidden;
+
+  display: block;
+  width: 200em;
+  height: 100em;
+  margin: 20em;
+  margin-bottom: 0em;
+}
+.semi-circle {
+  position: relative;
+
+  display: block;
+  width: 200em;
+  height: 100em;
+
+  background: linear-gradient(to right, red 0%, yellow 66%, green 100%);
+
+  border-radius: 50% 50% 50% 50% / 100% 100% 0% 0% ;
+}
+
+.semi-circle::before {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 2;
+
+    display: block;
+    width: 140em;
+    height: 70em;
+    margin-left: -70em;
+
+    background: #fff;
+
+    border-radius: 50% 50% 50% 50% / 100% 100% 0% 0% ; 
+}
+
+.semi-circle--mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 200em;
+  height: 200em;
+
+  background: transparent;
+
+  transform: rotate(150deg) translate3d(0,0,0);
+  transform-origin: center center;
+  backface-visibility: hidden;
+  transition: all .3s ease-in-out;
+}
+
+.semi-circle--mask::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0%;
+    z-index: 2;
+
+    display: block;
+    width: 200em;
+    /* was 202 */
+    height: 100em;
+    /* was 102 */
+    margin: -1px 0 0 -1px;
+
+    background: #f2f2f2;
+
+    border-radius: 50% 50% 50% 50% / 100% 100% 0% 0% ;    
+}
+
+.smiley--mask {
+  font-size: 5rem;
+  z-index: 4;
+  padding-left: 8.5rem;
+}
+
+.smiley--mask {
+  position: absolute;
+  padding-top: 0.5rem;
+}
+
+div.number--mask > p {
+  font-size: 5rem;
+  padding-left: 25%;
+  margin-top: 0rem;
+}
+
+.gauge--1.semi-circle {
+    background: green;
+  }
+  
+.gauge--2.semi-circle--mask {
+  transform: rotate(20deg) translate3d(0,0,0);
+}

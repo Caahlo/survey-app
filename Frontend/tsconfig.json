@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+"module": "esnext",
+    "skipLibCheck": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "target": "es2017",
+    "moduleResolution": "Node",
+    "sourceMap": true,
+    "outDir": "./dist"
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "./node_modules",
+    "./src/__test__",
+    "./dist/**/*"
+  ],
+  "ts-node": {
+    "esm": true
+  },
+  "lib": [
+    "es2016",
+    "DOM"
+  ]
+}

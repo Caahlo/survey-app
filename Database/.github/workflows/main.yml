@@ -1,0 +1,24 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      env:
+          POSTGRES_USER: ${{ secrets.DB_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.DB_PASSWD }}
+          POSTGRES_DB: ${{ secrets.DB_NAME }}
+      run: docker build . --file Dockerfile -t ghcr.io/knackpunktbrk/database:latest
+    - name: login to registry
+      run: echo ${{ secrets.CONTAINER_REGISTRY_TOKEN }} | docker login ghcr.io -u c-delrossi --password-stdin
+    - name: push to registry
+      run: docker push ghcr.io/knackpunktbrk/database:latest

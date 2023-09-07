@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="abc">
+
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>BRK Institutionelles Login</title>
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/login.css">
+    <link href="favicon.ico" rel="icon" type="image/x-icon">
+    <script src="umfragen.js" type="module"></script>
+  </head>
+  <body>
+
+    <div id="entry-view">
+      <header>
+        <h1>Administration für Institutionen</h1>
+      </header>
+      <nav>
+        <button id="logoutButton" type="submit">Logout</button>
+        <section>
+            <p><a href="./administration.html">Administration</a></p>
+            <p><a href="./benutzereinstellungen.html">Benutzereinstellungen</a></p>
+        </section>
+      </nav>
+      <main>
+        <section>
+          <h2>Umfrageübersicht</h2>
+          <table>
+            <tr>
+              <th>Identifikation</th>
+              <th>Startdatum</th>
+              <th>Enddatum</th>
+              <th>Optionen</th>
+            </tr>
+            <tr id="tableRow">
+              <p>Erstellen Sie eine Umfrage.</p>
+            </tr>
+          </table>
+        </section>
+        <section>
+          <h2>Umfrage erstellen</h2>
+          <p>
+            Umfragegültigkeit in Tage:
+            <input id="durationTime" class="profile-select-form-button" type="number" value=""></input>
+          </p>
+          <p>
+            <input id="startNewSurveyButton" class="profile-select-form-button" type="button" value="Neue Umfrage anlegen"></input>
+          </p>
+          <p id="informationOutput" class="form-annotation" hidden>
+            ...
+          </p>
+        </section>
+      </main>
+    </div>
+
+  </body>
+</html>

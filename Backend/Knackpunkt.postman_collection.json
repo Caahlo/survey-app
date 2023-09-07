@@ -1,0 +1,884 @@
+{
+	"info": {
+		"_postman_id": "82b14459-e582-4696-aa9b-4670b25364cb",
+		"name": "Knackpunkt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23742169"
+	},
+	"item": [
+		{
+			"name": "Respondent Routes",
+			"item": [
+				{
+					"name": "Get Survey Questions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/umfrage/Lindenhof/1?targetGroup=Fachkraefte",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"umfrage",
+								"Lindenhof",
+								"1"
+							],
+							"query": [
+								{
+									"key": "targetGroup",
+									"value": "Fachkraefte"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ViewSurvey",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/umfrage/Lindenhof/1?targetGroup=Fachkraefte",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"umfrage",
+										"Lindenhof",
+										"1"
+									],
+									"query": [
+										{
+											"key": "targetGroup",
+											"value": "Fachkraefte"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3262"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cbe-76YjNm4uvzKEklH9ZtjmiFf70Zc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Nov 2022 15:51:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\"questions\":[{\"questionId\":1,\"text\":\"Haben die Bewohnenden Einzelzimmer, wenn sie es wünschen?\",\"category\":\"Wohnen\",\"targetGroup\":\"Fachkraefte\",\"hasSmileys\":true,\"answerOptions\":[{\"option\":\"Ja\",\"score\":4,\"questionId\":1},{\"option\":\"Nein\",\"score\":0,\"questionId\":1},{\"option\":\"Manchmal\",\"score\":2,\"questionId\":1},{\"option\":\"NichtBeurteilbar\",\"score\":0,\"questionId\":1}]},{\"questionId\":2,\"text\":\"Haben die Zimmer ein eigenes WC?\",\"category\":\"Wohnen\",\"targetGroup\":\"Fachkraefte\",\"hasSmileys\":true,\"answerOptions\":[{\"option\":\"Ja\",\"score\":4,\"questionId\":2},{\"option\":\"Nein\",\"score\":0,\"questionId\":2},{\"option\":\"Manchmal\",\"score\":2,\"questionId\":2},{\"option\":\"NichtBeurteilbar\",\"score\":0,\"questionId\":2}]},{\"questionId\":3,\"text\":\"Haben die Zimmer eine eigene Dusche?\",\"category\":\"Wohnen\",\"targetGroup\":\"Fachkraefte\",\"hasSmileys\":true,\"answerOptions\":[{\"option\":\"Ja\",\"score\":4,\"questionId\":3},{\"option\":\"Nein\",\"score\":0,\"questionId\":3},{\"option\":\"Manchmal\",\"score\":2,\"questionId\":3},{\"option\":\"NichtBeurteilbar\",\"score\":0,\"questionId\":3}]},{\"questionId\":4,\"text\":\"Gibt es in der Institution ausgebildete sexualpädagogische Fachpersonen?\",\"category\":\"Bildung\",\"targetGroup\":\"Fachkraefte\",\"hasSmileys\":true,\"answerOptions\":[{\"option\":\"Ja\",\"score\":4,\"questionId\":4},{\"option\":\"Nein\",\"score\":0,\"questionId\":4},{\"option\":\"NichtBeurteilbar\",\"score\":0,\"questionId\":4}]},{\"questionId\":5,\"text\":\"Gibt es Aufklärungsmaterial zum Thema Sexualität in Leichter Sprache?\",\"category\":\"Bildung\",\"targetGroup\":\"Fachkraefte\",\"hasSmileys\":true,\"answerOptions\":[{\"option\":\"Ja\",\"score\":4,\"questionId\":5},{\"option\":\"Nein\",\"score\":0,\"questionId\":5},{\"option\":\"Manchmal\",\"score\":2,\"questionId\":5},{\"option\":\"NichtBeurteilbar\",\"score\":0,\"questionId\":5}]},{\"questionId\":6,\"text\":\"Haben die Bewohnenden Zugang zum Aufklärungsmaterial?\",\"category\":\"Bildung\",\"targetGroup\":\"Fachkraefte\",\"hasSmileys\":true,\"answerOptions\":[{\"option\":\"Ja\",\"score\":4,\"questionId\":6},{\"option\":\"Nein\",\"score\":0,\"questionId\":6},{\"option\":\"Manchmal\",\"score\":2,\"questionId\":6},{\"option\":\"NichtBeurteilbar\",\"score\":0,\"questionId\":6}]},{\"questionId\":7,\"text\":\"Dürfen die Bewohnenden bestimmen, ob sie von einem Mann oder einer Frau gepflegt werden?\",\"category\":\"Gesundheit und Pflege\",\"targetGroup\":\"Fachkraefte\",\"hasSmileys\":true,\"answerOptions\":[{\"option\":\"Ja\",\"score\":4,\"questionId\":7},{\"option\":\"Nein\",\"score\":0,\"questionId\":7},{\"option\":\"Manchmal\",\"score\":2,\"questionId\":7},{\"option\":\"NichtBeurteilbar\",\"score\":0,\"questionId\":7}]},{\"questionId\":8,\"text\":\"Werden individuelle Bedürfnisse der Bewohnenden bei der Intimpflege berücksichtigt?\",\"category\":\"Gesundheit und Pflege\",\"targetGroup\":\"Fachkraefte\",\"hasSmileys\":true,\"answerOptions\":[{\"option\":\"Ja\",\"score\":4,\"questionId\":8},{\"option\":\"Nein\",\"score\":0,\"questionId\":8},{\"option\":\"Manchmal\",\"score\":2,\"questionId\":8},{\"option\":\"NichtBeurteilbar\",\"score\":0,\"questionId\":8}]},{\"questionId\":9,\"text\":\"Sind Informationen über Geschlechtskrankheiten für Bewohnende verfügbar?\",\"category\":\"Gesundheit und Pflege\",\"targetGroup\":\"Fachkraefte\",\"hasSmileys\":true,\"answerOptions\":[{\"option\":\"Ja\",\"score\":4,\"questionId\":9},{\"option\":\"Nein\",\"score\":0,\"questionId\":9},{\"option\":\"Manchmal\",\"score\":2,\"questionId\":9},{\"option\":\"NichtBeurteilbar\",\"score\":0,\"questionId\":9}]}]}"
+						}
+					]
+				},
+				{
+					"name": "SubmitSurvey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"answers\": [\r\n        {\"question\":{\"questionId\":1},\r\n        \"answer\": \"Nein\"\r\n        },\r\n        {\"question\":{\"questionId\":2},\r\n        \"answer\": \"Ja\"\r\n        },\r\n        {\"question\":{\"questionId\":3},\r\n        \"answer\": \"Ja\"\r\n        },\r\n        {\"question\":{\"questionId\":4},\r\n        \"answer\": \"Nein\"\r\n        },\r\n        {\"question\":{\"questionId\":5},\r\n        \"answer\": \"Nein\"\r\n        },\r\n        {\"question\":{\"questionId\":6},\r\n        \"answer\": \"Ja\"\r\n        },\r\n        {\"question\":{\"questionId\":7},\r\n        \"answer\": \"Nein\"\r\n        },\r\n        {\"question\":{\"questionId\":8},\r\n        \"answer\": \"Nein\"\r\n        },\r\n        {\"question\":{\"questionId\":9},\r\n        \"answer\": \"Manchmal\"\r\n        }\r\n    ],\r\n    \"comments\": [{\"category\":\"Wohnen\",\"text\":\"Ich mag das\"}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/umfrage/Lindenhof/1?targetGroup=Fachkraefte",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"umfrage",
+								"Lindenhof",
+								"1"
+							],
+							"query": [
+								{
+									"key": "targetGroup",
+									"value": "Fachkraefte"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Institution Management",
+			"item": [
+				{
+					"name": "Survey Management",
+					"item": [
+						{
+							"name": "GetResults",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/resultate/umfrage/1/",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"resultate",
+										"umfrage",
+										"1",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "GetResults",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:8000/api/resultate/umfrage/1/",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"resultate",
+												"umfrage",
+												"1",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "847"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"34f-swFicJ5rMvbqU/YrvDwWHJeU5WI\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 02 Nov 2022 15:51:20 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\"results\":[{\"category\":\"Wohnen\",\"Fachkraefte\":{\"scores\":{\"achievedResult\":32,\"possibleResult\":48},\"comments\":[\"Ich mag das\"]},\"Angehoerige\":{\"scores\":{\"achievedResult\":0,\"possibleResult\":0},\"comments\":[]},\"Bewohnende\":{\"scores\":{\"achievedResult\":18,\"possibleResult\":18},\"comments\":[]}},{\"category\":\"Bildung\",\"Fachkraefte\":{\"scores\":{\"achievedResult\":16,\"possibleResult\":48},\"comments\":[]},\"Angehoerige\":{\"scores\":{\"achievedResult\":0,\"possibleResult\":0},\"comments\":[]},\"Bewohnende\":{\"scores\":{\"achievedResult\":18,\"possibleResult\":18},\"comments\":[\"Ich mag das NICHT!\"]}},{\"category\":\"Gesundheit und Pflege\",\"Fachkraefte\":{\"scores\":{\"achievedResult\":8,\"possibleResult\":48},\"comments\":[]},\"Angehoerige\":{\"scores\":{\"achievedResult\":0,\"possibleResult\":0},\"comments\":[]},\"Bewohnende\":{\"scores\":{\"achievedResult\":18,\"possibleResult\":18},\"comments\":[]}}]}"
+								}
+							]
+						},
+						{
+							"name": "StartSurvey",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/institutionen/1/umfragen/start?duration=1",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"institutionen",
+										"1",
+										"umfragen",
+										"start"
+									],
+									"query": [
+										{
+											"key": "duration",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetInstitutionSurveys",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/institutionen/1/umfragen",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"institutionen",
+										"1",
+										"umfragen"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "GetInstitutionSurveys",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:8000/api/institutionen/1/umfragen",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"institutionen",
+												"1",
+												"umfragen"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 27 Oct 2022 20:28:50 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										},
+										{
+											"key": "Content-Length",
+											"value": "104"
+										}
+									],
+									"cookie": [],
+									"body": "{\"surveys\":[{\"surveyId\":1,\"startDate\":\"2022-10-27T17:05:54.591Z\",\"endDate\":\"2022-10-27T17:05:54.591Z\"}]}"
+								}
+							]
+						},
+						{
+							"name": "Delete Survey",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbnN0aXR1dGlvbklkIjoxLCJyb2xlIjoiSW5zdGl0dXRpb24iLCJlbWFpbCI6ImxpbmRlbmhvZkBtYWlsLmNvbSIsImlhdCI6MTY2OTMxNzg5NiwiZXhwIjoxNjY5MzE4Nzk2fQ.YlxKuS2oENnSXaZHPPKKvG0GJY8nMDAyvlaCslcmExI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/institutionen/1/umfragen/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"institutionen",
+										"1",
+										"umfragen",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Personal Information Management",
+					"item": [
+						{
+							"name": "GetInstitution",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/api/institutionen/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"institutionen",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "GetInstitution",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:8000/api/institutionen/1",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"institutionen",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "146"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"92-uZBIXBFd2C71zm881cz5EoWK7R0\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 27 Oct 2022 18:20:39 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\"institution\":{\"institutionId\":1,\"name\":\"Lindenhof\",\"address\":\"Sosostrasse 12\",\"city\":\"Dahausen\",\"areaCode\":\"0000\",\"email\":\"lindenhof@mail.com\"}}"
+								}
+							]
+						},
+						{
+							"name": "UpdateInstitution",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"institution\": {\r\n       \"institutionId\":1,\r\n       \"name\":\"LindenhofUpdated\",\r\n       \"address\":\"Aufweg 11\",\r\n       \"city\":\"SoSoHausen\",\r\n       \"areaCode\":\"2222\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/institutionen",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"institutionen"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateInstitutionEmail",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"institution\": {\r\n        \"institutionId\": 1,\r\n        \"newEmail\": \"lindenh@of.ch\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/institutionen/email",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"institutionen",
+										"email"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Password Management",
+					"item": [
+						{
+							"name": "Request Password Reset Link",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"email\": \"carlo.delrossi@ost.ch\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/passwort/vergessen",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"passwort",
+										"vergessen"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ResetPassword",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"password\": \"hey\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/passwort/reset?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbnN0aXR1dGlvbklkIjo1LCJ1dWlkIjoiMDNlOGRmZGItZTk0NS00OTE0LTkyODktZjdjNWY2NThiN2RiIiwidG9rZW5UeXBlIjoyLCJldmVudFR5cGUiOiJQYXNzd29yZFJlc2V0RXZlbnQiLCJpYXQiOjE2Njk3MjQ1ODEsImV4cCI6MTY2OTgxMDk4MX0.68dvr_OnAMBQInDQh21vE55jD15fMidqGiVXhGbw9GU",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"passwort",
+										"reset"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbnN0aXR1dGlvbklkIjo1LCJ1dWlkIjoiMDNlOGRmZGItZTk0NS00OTE0LTkyODktZjdjNWY2NThiN2RiIiwidG9rZW5UeXBlIjoyLCJldmVudFR5cGUiOiJQYXNzd29yZFJlc2V0RXZlbnQiLCJpYXQiOjE2Njk3MjQ1ODEsImV4cCI6MTY2OTgxMDk4MX0.68dvr_OnAMBQInDQh21vE55jD15fMidqGiVXhGbw9GU"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateInstitutionPassword",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlblR5cGUiOjAsImVtYWlsIjoibGluZGVuaG9mQG1haWwuY29tIiwiYWNjb3VudElkIjoxLCJyb2xlIjoiSW5zdGl0dXRpb24iLCJpYXQiOjE2Njk5OTA3NDAsImV4cCI6MTY2OTk5MTY0MH0.Eyu8WzBsO0QHm5_qnDCUM2TNreiCZzD0zg9kWK9xfyA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"institution\": {\r\n        \"institutionId\": 1,\r\n        \"oldPassword\": \"123\",\r\n        \"newPassword\": \"d!pm9oaiNT7dGo!!\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/institutionen/passwort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"institutionen",
+										"passwort"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Account Deletion",
+					"item": [
+						{
+							"name": "DeleteInstitution",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbnN0aXR1dGlvbklkIjo1LCJyb2xlIjoiSW5zdGl0dXRpb24iLCJlbWFpbCI6ImNhcmxvLmRlbHJvc3NpQG9zdC5jaCIsInRva2VuVHlwZSI6MCwiaWF0IjoxNjY5NzI0NjQxLCJleHAiOjE2Njk3MjU1NDF9.dQeVPUVQycz1Nbj9VMcAC4euVjn7tGYAewG0BBsAPI4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/institutionen/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"institutionen",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ConfirmDeletion",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbnN0aXR1dGlvbklkIjo1LCJyb2xlIjoiSW5zdGl0dXRpb24iLCJlbWFpbCI6ImNhcmxvLmRlbHJvc3NpQG9zdC5jaCIsInRva2VuVHlwZSI6MCwiaWF0IjoxNjY5NzI0NjQxLCJleHAiOjE2Njk3MjU1NDF9.dQeVPUVQycz1Nbj9VMcAC4euVjn7tGYAewG0BBsAPI4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/institutionen/loeschen?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbnN0aXR1dGlvbklkIjo1LCJ0b2tlblR5cGUiOjIsImV2ZW50VHlwZSI6IkFjY291bnREZWxldGlvbkNvbmZpcm1hdGlvbkV2ZW50IiwiaWF0IjoxNjY5NzI0NzIxLCJleHAiOjE2Njk4MTExMjF9.SVIeF-B-LS69YYCmvu8M22P_NO_Qae5Qa6RzuCjGmfY",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"institutionen",
+										"loeschen"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbnN0aXR1dGlvbklkIjo1LCJ0b2tlblR5cGUiOjIsImV2ZW50VHlwZSI6IkFjY291bnREZWxldGlvbkNvbmZpcm1hdGlvbkV2ZW50IiwiaWF0IjoxNjY5NzI0NzIxLCJleHAiOjE2Njk4MTExMjF9.SVIeF-B-LS69YYCmvu8M22P_NO_Qae5Qa6RzuCjGmfY"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Login/Logout",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"lindenhof@mail.com\", \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh AccessToken",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/refresh",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Registration",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"institution\": {\"name\":\"Lerchenhof\",\"address\":\"Aufweg 12\",\"city\":\"Aastadt\",\"areaCode\":\"1111\",\"email\":\"carlo.delrossi@ost.ch\"}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/institutionen",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"institutionen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Registration and Create Institution",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/institutionen/emailBestaetigen?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlblR5cGUiOjIsImV2ZW50VHlwZSI6IlJlZ2lzdHJhdGlvbkNvbmZpcm1hdGlvbkV2ZW50IiwiaW5zdGl0dXRpb25EYXRhIjp7Im5hbWUiOiJXYWxsYWNoaG9mIiwiYWRkcmVzcyI6IlNwYWxpZXJzdHJhc3NlIDEzIiwiY2l0eSI6Ik5vdWdhdHZpbGxlIiwiYXJlYUNvZGUiOiI5ODc2IiwiZW1haWwiOiJjYXJsby5kZWxyb3NzaUBvc3QuY2gifSwiaWF0IjoxNjcwMDc5OTI2LCJleHAiOjE2NzAxNjYzMjZ9.X-LbTfcxXp-AnRH_ijj5I7iFzoDAt-K4xr2egUDdrkg",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"institutionen",
+								"emailBestaetigen"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlblR5cGUiOjIsImV2ZW50VHlwZSI6IlJlZ2lzdHJhdGlvbkNvbmZpcm1hdGlvbkV2ZW50IiwiaW5zdGl0dXRpb25EYXRhIjp7Im5hbWUiOiJXYWxsYWNoaG9mIiwiYWRkcmVzcyI6IlNwYWxpZXJzdHJhc3NlIDEzIiwiY2l0eSI6Ik5vdWdhdHZpbGxlIiwiYXJlYUNvZGUiOiI5ODc2IiwiZW1haWwiOiJjYXJsby5kZWxyb3NzaUBvc3QuY2gifSwiaWF0IjoxNjcwMDc5OTI2LCJleHAiOjE2NzAxNjYzMjZ9.X-LbTfcxXp-AnRH_ijj5I7iFzoDAt-K4xr2egUDdrkg"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlblR5cGUiOjAsImVtYWlsIjoiY2FybG8uZGVscm9zc2lAb3N0LmNoIiwiYWNjb3VudElkIjoyLCJyb2xlIjoiSW5zdGl0dXRpb24iLCJpbnN0aXR1dGlvbklkIjoyLCJpYXQiOjE2NzAwMTIwMzYsImV4cCI6MTY3MDAxMjkzNn0.Rl6d_v-m3edQ0an340pGSscgVmSk4msHB7KKp-nRCTA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

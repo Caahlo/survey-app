@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="abc">
+
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>BRK Institutionelles Login</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link href="favicon.ico" rel="icon" type="image/x-icon">
+    <script src="login.js" type="module"></script>
+  </head>
+  <body>
+
+    <div id="entry-view">
+      <header>
+        <h1 tabindex="0">Login für Institutionen</h1>
+      </header>
+      <main>
+        <section>
+          <form action="">
+            <label for="email">
+              <b>Email</b>
+            </label>
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Email eingeben" name="email" minlength="5" required>
+
+            <label for="password"><b>Passwort</b></label>
+            <input type="password" placeholder="Passwort eingeben" name="password" minlength="3" required>
+            
+            <p id="InvalidUsernamePassword" class="form-annotation" hidden>...</p>
+
+            <button type="submit">Login</button>
+          </form>
+          <section class="psw">
+            <p>
+              Passwort <a href="./login/passwort.html">vergessen?</a>
+            </p>
+          </section>
+          <section class="register">
+            <p>
+              <a href="./login/registrieren.html">Registrieren</a>
+            </p>
+          </section>
+        </section>
+      </main>
+    </div>
+
+  </body>
+</html>

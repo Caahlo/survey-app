@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="abc">
+
+  <head>
+    <meta charset="utf-8">
+    <title>BRK</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link href="favicon.ico" rel="icon" type="image/x-icon">
+    <script src="resultate.js" type="module"></script>
+  </head>
+  <body>
+
+    <div id="entry-view">
+      <header>
+        <h1>Umfrage zur Sexualität und die Umsetzung der BRK in Institutionen</h1>
+      </header>
+      <main>
+        <section>
+          <form id="profile-select-form">
+            <label for="profil" tabindex="0">Ich bin</label>
+            <select name="profil" tabindex="0" id="profile-select" required>
+              <option value="Bewohnende">Bewohner</option>
+              <option value="Fachkraefte">Institutioneller Mitarbeiter</option>
+              <option value="Angehoerige">Angehöriger</option>
+            </select>
+            <div class="blob-button">
+              <input id="profile-select-form-button" class="profile-select-form-button" tabindex="0" type="submit" value="Umfrage starten ✔️">
+            </div>
+          </form>
+          <p class="form-annotation">Bitte wählen Sie Ihr einzusehendes Wunschprofil.</p>
+          <section class="entry-information">
+            <p>Nachdem die Umfrage gestartet wurde, haben Sie eine Liste mit verschiedenen Fragen vor sich. Bitte kreuzen Sie die Antwort an, die für sie passt.</p>
+              <ul>
+                <li>Es gibt keine richtigen und falschen Antworten. Nur Ihre Meinung zählt.</li>
+                <li>Beantworten Sie die Checkliste allein.</li>
+                <li>Wenn Sie eine Frage nicht verstehen, markieren sie diese und machen weiter.</li>
+                <li>Sie müssen Ihren Namen nicht aufschreiben.</li>
+                <li><strong>Die Antworten bleiben anonym.</strong></li>
+              </ul>
+              <p tabindex="0">Nehmen Sie sich Zeit, die Fragen zu beantworten.</p>
+              <p tabindex="0">Vielen Dank für das Mitmachen.</p>
+            </p>
+          </section> 
+        </section>
+      </main>
+    </div>
+    
+    <!-- static content -->
+    <div id="super-view">
+      <div id="result-view" hidden>
+        <header>
+          <h1 tabindex="0">Die Umfrage hat geendet.</h1>
+          <h2 tabindex="0">Anonyme Resultate der Institution</h2>
+        </header>
+        <main>
+          <section>
+            <form id="result-select-form">
+              <label for="result" tabindex="0">Resultate & Empfehlungen anzeigen für</label>
+              <select name="result" tabindex="0" id="result-select" required>
+                <option value="Bewohnende">Bewohner</option>
+                <option value="Fachkraefte">Institutioneller Mitarbeiter</option>
+                <option value="Angehoerige">Angehöriger</option>
+              </select>
+              <div class="blob-button">
+                <input id="result-select-form-button" tabindex="0" type="submit" value="Umfrageresultate anzeigen ✔️">
+              </div>
+            </form>
+            <!-- <p class="form-annotation">Bitte wählen Sie Ihr Profil.</p> -->
+            <section class="result-institution">
+              <h3 tabindex="0">Gesamtresultat aller Personengruppen</h3>
+            </section>
+            <section class="result-information">
+              <div class="box gauge--1">
+                <div class="mask">
+                  <div class="semi-circle"></div>
+                  <div class="semi-circle--mask"></div>
+                </div>
+                <div class="number--mask">
+                  <p>88%</p>
+                </div>
+              </div>
+              <div class="smiley--mask">
+                <p>😀</p>
+              </div>
+              <div class="result-information-text">
+                <p tabindex="0">Erreicht wurden 200 Punkte von insgesamt 200 Punkten. Das Resultat liegt bei 88%.</p>
+                <p tabindex="0">Bitte beachten Sie, dass das Gesamtresultat keine unmittelbaren Schlüsse auf die Institution zulässt.</p>
+              </div>
+            </section>
+          </section>
+        </main>
+        <section>
+          <table tabindex="0">
+            <thead>
+              <tr>
+                <th tabindex="0" scope="col">Kategorie</th>
+                <th tabindex="0" scope="col">Ergebnis</th>
+                <th tabindex="0" scope="col">💡 Empfehlung</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td tabindex="0">Frage n</td>
+                <td tabindex="0">diskrepante Antwort</td>
+                <td tabindex="0">Empfehlung ...</td>
+              </tr>
+              <tr>
+                <td tabindex="0">Hat Ihnen das Wohnheim erklärt, was sexuelle Gewalt ist?</td>
+                <td tabindex="0">Nein 😟</td>
+                <td tabindex="0">✔️ Es ist wichtig, dass man über sexuelle Gewalt spricht. So lernt man, dass nicht alle Berührungen erlaubt sind.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+      <div id="main-view" hidden>
+        <header>
+          <h1>Sexuelle Gewalt</h1>
+          <h2>Fragen aus der Kategorie sexuelle Gewalt</h2>
+        </header>
+
+        <section>
+          <!-- <p>Die Fragen werden geladen. Bitte warten Sie einen Augenblick...</p> -->
+        </section>
+
+        <!-- dynamic content -->
+        <!-- the following content requires JS post building -->
+        <section id="41">
+          <section id="sexuellegewalt41" class="lightbox">
+            <figure>
+              <a href="#" tabindex="0" class="close"></a>
+              <a tabindex="-1" href="#">
+                <figcaption>
+                  <def>sexuelle Gewalt</def>
+                  <p tabindex="0">Jemand belästigt Sie sexuell. Zum Beispiel: jemand berührt Sie an einer intimen Stelle. Beispielsweise am Busen oder Po. Das wollen Sie aber nicht. Oder jemand zwingt Sie zum Sex. Das ist verboten.</p>
+                </figcaption>
+              </a>
+            </figure>
+          </section>
+
+          <main>
+            <section class="questions">
+              <p tabindex="0" id="question">Hat Ihnen das Wohnheim erklärt, was sexuelle Gewalt ist?</p>
+            </section>
+            <section class="definition">
+              <a href="#sexuellegewalt41">
+                <section>
+                  <p>was bedeutet <strong><def>sexuelle Gewalt</def></strong>?</p>
+                </section>
+              </a>
+            </section>
+            <section class="answers">
+              <form name="answer-id">
+                <p class="form-annotation-inverted">
+                  Bitte wählen Sie eine Antwort aus.
+                </p>
+                <fieldset class="answer-form">
+                  <div>
+                    <input tabindex="0" type="radio" id="41-yes" name="answer" value="ja"/>
+                    <label for="41-yes">Ja 😀</label>
+                  </div>
+                  <div>
+                    <input tabindex="0" type="radio" id="41-sometimes" name="answer" value="teilweise" />
+                    <label for="41-sometimes">Teilweise 😐</label>
+                  </div>
+                  <div>
+                    <input tabindex="0" type="radio" id="41-no" name="answer" value="nein" />
+                    <label for="41-no">Nein 😟</label>
+                  </div>
+                  <div>
+                    <input tabindex="0" type="radio" id="41-noanswer" name="answer" value="Kann ich nicht beantworten ✖" />
+                    <label for="41-noanswer">Kann ich nicht beantworten ✖</label>
+                  </div>
+                </fieldset>
+              </form>
+            </section>
+          </main>
+          <nav>
+            <ol>
+              <li class="navigate-questions">
+                <button name="button" id="tempBackButtonabc" class="intermediate-view-button">◀️ zur letzten Frage zurück</button>
+              </li>
+              <li class="navigate-questions">
+                <div class="blob-button">
+                  <button name="button" id="tempForwardButton" class="intermediate-view-button">▶️ zur nächsten Frage weiter</button>
+                </div>
+              </li>
+            </ol>
+          </nav>
+          
+        </section>
+      </div>
+
+      <div id="intermediate-view" hidden>
+        <header>
+          <h1>Sexuelle Gewalt</h1>
+          <h2 tabindex="0">Kommentarmöglichkeit</h2>
+        </header>
+        <section class="ask-and-comment">
+          <section class="ask-category">
+            <p tabindex="0">
+              Gibt es noch allgemeine Bemerkungen oder Ergänzungen zu einzelnen Fragen bezüglich  
+              dem Thema «sexuelle Gewalt»?
+            </p>
+          </section>
+          <main>
+            <section>
+              <form action="" method="post" class="comment-category">
+                <label for="comment-category-form">Kategorie kommentieren:</label>
+                <input type="text" name="comment-category-form" id="comment-category-form4">
+                <p class="form-annotation">Kommentare zum Thema sexuelle Gewalt können Sier hier hinschreiben.</p>
+              </form>
+            </section>
+          </main>
+        </section>
+        <nav>
+          <ol>
+            <li class="navigate-questions">
+              <button name="button" id="tempBackButtonxyz" class="intermediate-next-view-button">◀️ zur letzten Frage zurück</button>
+            </li>
+            <li class="navigate-questions">
+              <div class="blob-button">
+                <button name="button" class="intermediate-view-button">Umfrage beenden ✔️</button>
+              </div>
+            </li>
+          </ol>
+        </nav>
+        <p class="form-annotation">Nachdem Sie die Umfrage beendet haben, erhalten Sie Empfehlungen basierend auf Ihren Antworten.</p>
+      </div>
+
+      <!-- the following content requires JS post building -->
+      <div id="checkout-view" hidden>
+        <header>
+          <h1>Umfrageübersicht Ihrer Antworten</h1>
+          <h2></h2>
+        </header>
+        <nav>
+          <ol>
+            <li class="navigate-questions"><a href="#">vorherige Frage anzeigen</a></li>
+            <li class="navigate-questions"><a href="#" hidden>nächste Frage anzeigen</a></li>
+            <li class="navigate-questions"><a href="#" hidden>Frageübersicht anzeigen</a></li>
+          </ol>
+        </nav>
+        <main>
+          <section>
+            <p>Nachdem Sie die Umfrage abgeschickt haben, erhalten Sie Empfehlungen basierend auf Ihren Antworten.</p>
+            <p>Darf das Institut ZEN Ihre Daten in anonymisierter Form zwecks Gleichstellungsanalyse erhalten? Es sind keine Rückschlüsse über personenbezogene Daten möglich.</p>
+            <form action="" method="post">
+              <label for="profil" id="share-survey-data-select">Ich möchte meine Daten teilen:</label>
+              <select name="profil" id="share-survey-data-select" required>
+                <option value="share-survey-data-yes">Ja</option>
+                <option value="share-survey-data-no">Nein</option>
+              </select>
+              <input type="submit" value="Umfrage abschicken">
+              <p class="form-annotation">Bitte wählen Sie aus, ob Sie Ihre Daten anonymisiert teilen möchten.</p>
+            </form>
+          </section>
+        </main>
+      </div>
+
+      <!-- static content -->
+      <div id="end-view" hidden>
+        <header>
+            <h1>Danke fürs Mitmachen.</h1>
+            <h2></h2>
+        </header>
+        <main>
+          <p tabindex="0">Vielen Dank für Ihre Teilnahme an der Umfrage zur Sexualität und die Umsetzung der Behindertenrechtskonvention in Institutionen.</p>
+          <h3 tabindex="0">Empfehlungen basierend auf Ihren Antworten</h3>
+          <!-- the following content requires JS post building -->
+          <table tabindex="0">
+            <thead>
+              <tr>
+                <th scope="col">Frage</th>
+                <th scope="col">Ihre Antwort</th>
+                <th scope="col">💡 Empfehlung</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Frage n</td>
+                <td>diskrepante Antwort</td>
+                <td>Empfehlung ...</td>
+              </tr>
+              <tr>
+                <td>Hat Ihnen das Wohnheim erklärt, was sexuelle Gewalt ist?</td>
+                <td>Nein 😟</td>
+                <td>✔️ Es ist wichtig, dass man über sexuelle Gewalt spricht. So lernt man, dass nicht alle Berührungen erlaubt sind.</td>
+              </tr>
+              <tr>
+                <td>Frage n+2</td>
+                <td>diskrepante Antwort</td>
+                <td>Empfehlung ...</td>
+              </tr>
+              <tr>
+                <td>Frage n+3</td>
+                <td>diskrepante Antwort</td>
+                <td>Empfehlung ...</td>
+              </tr>
+            </tbody>
+          </table> 
+        
+        </main>
+      </div>
+    </div>
+
+    <div id="exception-view" hidden>
+      <header>
+          <h1 tabindex="0">Ein Fehler ist aufgetreten</h1>
+      </header>
+      <main>
+        <section>
+          <p id="exception-view-text"></p>
+        </section>
+      </main>
+    </div>
+
+  </body>
+</html>

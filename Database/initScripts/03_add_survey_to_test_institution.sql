@@ -1,0 +1,2 @@
+INSERT INTO survey ("startDate", "endDate", "surveyId", "templateTemplateId", "institutionInstitutionId")
+VALUES (now(), now(), default, (SELECT MAX("templateId") from survey_template), (SELECT MAX("institutionId") from institution));

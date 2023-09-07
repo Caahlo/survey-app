@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      env:
+          FE_PORT: ${{ secrets.FE_PORT }}
+      run: docker build . --file Dockerfile -t ghcr.io/knackpunktbrk/frontend:latest
+    - name: login to registry
+      run: echo ${{ secrets.CONTAINER_REGISTRY_TOKEN }} | docker login ghcr.io -u c-delrossi --password-stdin
+    - name: push to registry
+      run: docker push ghcr.io/knackpunktbrk/frontend:latest

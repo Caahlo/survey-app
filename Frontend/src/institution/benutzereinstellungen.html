@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="abc">
+
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>BRK Institutionelles Login</title>
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/login.css">
+    <link href="favicon.ico" rel="icon" type="image/x-icon">
+    <script src="einstellungen.js" type="module"></script>
+  </head>
+  <body>
+
+    <div id="entry-view">
+      <header>
+        <h1 tabindex="0">Einstellungen für Institutionen</h1>
+      </header>
+      <main>
+
+        <h2>Informationen zur Institution</h2>
+        <section>
+          <form action="">
+            <label for="institutionName"><b>Institutionsname</b></label>
+            <input id="institutionName" type="text" placeholder="Institutionsname eingeben" name="institutionName" minlength="2" required>
+
+            <label for="address"><b>Adresse</b></label>
+            <input id="address" type="text" placeholder="Adresse eingeben" name="address" minlength="3" required>
+
+            <label for="location"><b>Ort</b></label>
+            <input id="location" type="text" placeholder="Ort eingeben" name="location" minlegnth="3" required>
+
+            <label for="zipcode"><b>Postleitzahl</b></label>
+            <input id="zipcode" type="zipcode" placeholder="Postleitzahl eingeben" name="zipcode" minlegnth="4" required>
+
+            <label for="email"><b>Email</b></label>
+            <input id="emailInstitution" type="email" placeholder="Email eingeben" name="email" minlength="5" required>
+
+            <button id="submitInstitutionUpdate" type="submit">aktualisieren</button>
+            <p id="informationOutputUpdate" class="form-annotation" hidden>...</p>
+          </form>
+
+          <h2>Passwort erneuern</h2>
+          <form action="">
+            <label for="password"><b>Altes Passwort</b></label>
+            <input id="passwordOld" type="password" placeholder="Passwort eingeben" name="password" minlength="3" required>
+
+            <label for="password"><b>Neues Passwort</b></label>
+            <input id="passwordNew" type="password" placeholder="Passwort eingeben" name="password" minlength="3" required>
+
+            <button id="submitPassword" type="submit">aktualisieren</button>
+            <p id="informationOutputPasswort" class="form-annotation" hidden>...</p>
+          </form>
+
+          <h2>Email ändern</h2>
+          <form action="">
+            <label for="email"><b>Email</b></label>
+            <input id="emailChange" type="email" placeholder="Email eingeben" name="email" minlength="5" required>
+
+            <button id="submitEmail" type="submit">aktualisieren</button>
+            <p id="informationOutputEmail" class="form-annotation" hidden>...</p>
+          </form>
+
+          <h2>Institution dauerhaft löschen</h2>
+          <form action="">
+            <input id="checkboxDelete" type="checkbox" name="delete" value="delete" id="check1">
+            <label for="check1">Institution dauerhaft löschen</label>
+            <button id="submitDelete" type="submit">aktualisieren</button>
+            <p id="informationOutputDelete" class="form-annotation" hidden>...</p>
+          </form>
+        </section>
+      </main>
+    </div>
+
+  </body>
+</html>
